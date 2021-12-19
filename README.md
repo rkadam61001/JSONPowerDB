@@ -3,9 +3,9 @@
 ### About JSONPowerDB
 - JsonPowerDB is a Real-time, High Performance, Lightweight and Simple to Use, Rest API based Multi-mode DBMS. It has ready to  use API for Json document DB, RDBMS, Key-value DB, GeoSpatial DB and Time Series DB functionality.
 ### Benefits of JSONPowerDB
-- It minimizes the developmet cost
+- It minimizes the development cost
 - One can easily retrive,update and delete data easily.
-- It maximises the data processing performance
+- It maximises the data processing performance.
 - It is technology fuutristic; it fills the gap from database to bigdata.
 - It is pluggable with new algorithms and user defined APIs.
 - It minimises the total cost of ownership.
