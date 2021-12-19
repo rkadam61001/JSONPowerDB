@@ -9,6 +9,7 @@
 - It is technology fuutristic; it fills the gap from database to bigdata.
 - It is pluggable with new algorithms and user defined APIs.
 - It minimises the total cost of ownership.
+- It is schema free i.e user does not need to create table like MySQl.
 ### Screenshots
 ![webpage](https://user-images.githubusercontent.com/70443980/146673324-17bf831f-9dd4-4866-8220-1dc0d16f9e28.png)
 ![put](https://user-images.githubusercontent.com/70443980/146673360-0472f700-fe0f-427d-aa8c-d4050b969b2c.png)
