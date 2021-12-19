@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Aiken Website</title>
+    <link rel="stylesheet" href="Aiken.css">
+</head>
+
+<body>
+    <h1 id="heading1">Quiz</h1>
+    <form id="form1" action="index.html" method="post" name="f1">
+        <input id="question" type="text" placeholder="Enter the Question" name="Question">
+        <br></br>
+        <input id="option1" type="text" placeholder="Enter Option 1" name="Option1">
+        <br></br>
+        <input id="option2" type="text" placeholder="Enter Option 2" name="Option2">
+        <br></br>
+        <input id="option3" type="text" placeholder="Enter Option 3" name="Option3">
+        <br></br>
+        <input id="option4" type="text" placeholder="Enter Option 4" name="Option4">
+        <br></br>
+        <input id="answer" type="text" placeholder="Enter Answer" name="Answer">
+        <br></br>
+    </form>
+    <button onclick="return quizSave()" id="Button1">Submit</button>
+    <button onclick="fun()" id="Button2">Reset</button>
+    <button id="Button3">Finish</button>
+    <script>
+        function validateForm() {
+            var questionid = document.getElementById("question").value;
+            var option1id = document.getElementById("option1").value;
+            var option2id = document.getElementById("option2").value;
+            var option3id = document.getElementById("option3").value;
+            var option4id = document.getElementById("option4").value;
+            var answerid = document.getElementById("answer").value;
+            if (questionid.value == "" || option1id == "" || option2id == "" || option3 == "" || option4 == "" || answerid == "") {
+                alert("Field cannot be empty");
+                return;
+            }
+            var jsonobjstr = {
+                Question: questionid,
+                Option1: option1id,
+                Option2: option2id,
+                Option3: option3id,
+                Option4: option4id,
+                Answer: answerid
+            };
+            return JSON.stringify(jsonobjstr);
+        }
+        function createPUTRequest(connToken, jsonObj, dbName, relName) {
+            var putRequest = "{\n"
+                + "\"token\" : \""
+                + connToken
+                + "\","
+                + "\"dbName\": \""
+                + dbName
+                + "\",\n" + "\"cmd\" : \"PUT\",\n"
+                + "\"rel\" : \""
+                + relName + "\","
+                + "\"jsonStr\": \n"
+                + jsonObj
+                + "\n"
+                + "}";
+            return putRequest;
+        }
+        function executeCommand(reqString, dbBaseUrl, apiEndPointUrl) {
+            var url = dbBaseUrl + apiEndPointUrl;
+            var jsonObj;
+            $.post(url, reqString, function (result) {
+                jsonObj = JSON.parse(result);
+            }).fail(function (result) {
+                var dataJsonObj = result.responseText();
+                jsonObj = JSON.parse(dataJsonObj);
+
+            });
+            return jsonObj;
+
+        }
+        function reset() {
+            questionid = "";
+            option1id = "";
+            option2id = "";
+            option3id = "";
+            option4id = "";
+            answerid = "";
+        }
+        function fun() {
+            document.getElementById("form1").reset();
+        }
+        function quizSave() {
+            var jsonStr = validateForm();
+            if (jsonStr === "") {
+                return;
+            }
+            var putConReq = createPUTRequest("90938568|-31948825000177576|90946665", jsonStr, "Quizzlet", "qu-rel");
+            alert(putConReq);
+            jQuery.ajaxSetup({ async: false });
+            var resultObj = executeCommand(putConReq, "http://api.login2explore.com:5577", "/api/iml");
+            alert(JSON.stringify(resultObj));
+            jQuery.ajaxSetup({ async: true });
+
+        }
+    </script>
+
+</body>
+
+</html>

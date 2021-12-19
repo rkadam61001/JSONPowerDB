@@ -1,0 +1,109 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(115, 233, 233);
+}
+#heading1{
+    text-align: center;
+    font-size: 40px;
+}
+form{
+    padding-left:38%;
+}
+#question{
+    margin: 2;
+    border-radius: 20px;
+    height: 30px;
+    width:400px;
+    border:none;
+
+}
+#option1{
+    margin: 1.5;
+    border-radius: 20px;
+    height: 30px;
+    width:400px;
+    border:none;
+}
+#option2{
+    margin: 1.5;
+    border-radius: 20px;
+    height: 30px;
+    width:400px;
+    border:none;
+}
+#option3{
+    margin: 1.5;
+    border-radius: 20px;
+    height: 30px;
+    width:400px;
+    border:none;
+}
+#option4{
+    margin: 1.5;
+    border-radius: 20px;
+    height: 30px;
+    width:400px;
+    border:none;
+}
+#answer{
+    margin: 1.5;
+    border-radius: 20px;
+    height: 30px;
+    width:400px;
+    border:none;
+}
+#Button1{
+    border-radius: 30px;
+    margin-left:690px;
+    width:60px;
+    height:30px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(157, 157, 218);
+}
+
+#Button1:hover{
+    color:black;
+    background-color: rgb(91, 141, 216);
+}
+#Button1:active {
+    background-color:rgb(179, 107, 228);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+#Button2{
+    border-radius: 30px;
+    height:30px;
+    width:60px; 
+    border: none;
+    cursor: pointer;
+    background-color: rgb(157, 157, 218);
+}
+#Button2:hover{
+    color:black;
+    background-color: rgb(91, 141, 216);
+}
+#Button2:active {
+    background-color:rgb(179, 107, 228);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+#Button3{
+    border-radius: 30px;
+    width:60px;
+    height:30px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(157, 157, 218);
+}
+#Button3:hover{
+    color:black;
+    background-color:rgb(91, 141, 216);
+}
+#Button3:active {
+    background-color:rgb(179, 107, 228);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
